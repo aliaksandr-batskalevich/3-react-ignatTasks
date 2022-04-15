@@ -1,0 +1,22 @@
+.taskWrapper {
+    padding: 2px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskName, .taskId {
+    font-family: Tahoma;
+    font-size: 16px;
+    font-weight: bold;
+    color: gold;
+}
+
+.delButton {
+    padding: 1px 2px;
+    font-size: 10px;
+    line-height: 10px;
+    margin-left: 5px;
+    font-weight: bold;
+    background-color: red;
+}
