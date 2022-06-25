@@ -1,24 +1,3 @@
-.affairsWrapper {
-    width: 300px;
-    margin: auto;
-}
+.someClass {
 
-.tasksWrapper {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.buttonWrapper {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttonWrapper button {
-    padding: 2px;
-    width: 20%;
-    font-weight: bold;
 }

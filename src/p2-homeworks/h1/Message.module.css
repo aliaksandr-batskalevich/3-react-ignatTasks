@@ -1,94 +1,123 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.outWrapper {
-    padding: 10px;
-    display: flex;
-    align-items: flex-end;
-    /*background-color: #89a162;*/
-}
-
-.imgWrapper {
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    border-radius: 50%;
-}
-
-.avatarImg {
-    height: 100%;
-    border-radius: 50%;
-}
-
 .messageWrapper {
-    position: relative;
-    width: 40%;
-    min-width: 300px;
-    min-height: 50px;
-    background-color: antiquewhite;
     display: flex;
-    border-radius: 8px 8px 8px 0;
-}
-
-.messageContain {
-    width: 80%;
-    padding: 10px 0 10px 10px;
-    /*border: red 1px solid;*/
-}
-
-.messageName {
-    color: blueviolet;
-}
-
-.messageText {
-    font-weight: 500;
-    color: #343434;
-}
-
-.messageTimeWrapper {
-    padding: 3px;
-    position: relative;
-    flex-grow: 1;
-    /*border: black 1px solid;*/
-    display: flex;
-    justify-content: center;
     align-items: flex-end;
 }
 
-.messageTime {
-    font-weight: 600;
-    color: brown;
+.messageWrapperMe {
+    flex-direction: row-reverse;
 }
 
-.triangleWrapper {
-    padding-left: 20px;
+.avatarWrapper {
+    padding: 3px;
+    background-color: #f37272;
+    border-radius: 50%;
+    position: relative;
     overflow: hidden;
 }
 
-.triangle {
-    position: absolute;
-    bottom: 0;
-    left: -20px;
-    /*left: -17px;*/
-    /*border-top: transparent 8px solid;*/
-    /*border-right: antiquewhite 17px solid;*/
-
-    /*border-top: red 20px solid;*/
-    /*border-right: blueviolet 20px solid;*/
-    border-bottom: antiquewhite 20px solid;
-    border-left: transparent 20px solid;
+.avatarWrapperMe {
+    background-color: #5151f1;
 }
 
-.triangleArc {
-    position: absolute;
-    bottom: 0;
-    left: -40px;
-    width: 40px;
+.img {
+    display: inline-block;
     height: 40px;
-    border-radius: 50%;
-    background-color: #89a162;
 }
 
+.textOutsideWrapper {
+    display: flex;
+}
+
+.texInsideWrapper {
+    padding: 10px 10px 5px;
+    display: flex;
+    align-items: flex-end;
+    background-color: bisque;
+    border-radius: 10px 10px 10px 0;
+}
+
+.texInsideWrapperMe {
+    background-color: #b2b3fa;
+    border-radius: 10px 10px 0 10px;
+}
+
+.textMainWrapper {
+    padding-bottom: 5px;
+}
+
+.nickName {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.nickNameMe {
+    color: darkblue;
+}
+
+.textOfMessage {
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.timeWrapper {
+    margin-left: 10px;
+}
+
+.time {
+    font-size: 10px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.cornerWrapper {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /*border: blue solid 1px;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.corner {
+    display: inline-block;
+
+    border-bottom: bisque solid 13px;
+    border-left: transparent solid 20px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.cornerMe {
+    border-left: unset;
+    border-right: transparent solid 20px;
+    border-bottom: #b2b3fa solid 20px;
+
+    left: unset;
+    right: 0;
+}
+
+.arc {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d8e7c5;
+
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+}
+
+.arcMe {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d8e7c5;
+
+    position: absolute;
+    left: -5px;
+    bottom: 0;
+}

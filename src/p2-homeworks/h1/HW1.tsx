@@ -1,27 +1,56 @@
 import React from 'react'
 import {Message} from "./Message";
-import {AlternativeMessage} from "./AlternativeMessage";
-import s from './Hw1.module.css'
+import './Hw1.css'
 
-const messageData = [{
-    avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
-    name: 'Marry',
-    message: 'Hi! What is your name?',
-    time: '22:00'
-}, {
-    avatar: 'https://w7.pngwing.com/pngs/959/410/png-transparent-mickey-mouse-encapsulated-postscript-cdr-mickey-mouse-cdr-heroes-hand.png',
-    name: 'Mickey',
-    message: 'Hi, my name is Mickey!!!!!',
-    time: '22:05'
-}]
+export type MessageData = {
+    id: string
+    avatar: string
+    name: string
+    message: string
+    time: string
+}
+type MessageDataArr = Array<MessageData>
+
+const messageData: MessageDataArr = [
+    {
+        id: 'gcs;',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/126/126486.png',
+        name: 'Marry',
+        message: 'Hello, I am Marry!',
+        time: '22:00'
+    },
+    {
+        id: 'gc;',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/126/126486.png',
+        name: 'Alex',
+        message: 'Hi, I am Alex!',
+        time: '22:05'
+    },
+    {
+        id: 'gs;',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/126/126486.png',
+        name: 'Alex',
+        message: 'Where are you?',
+        time: '22:06'
+    },
+]
 
 function HW1() {
     return (
-        <div className={s.hw1Wrapper}>
-            <h2>1st homework</h2>
+        <div className='hw1Wrapper'>
             <hr/>
-            <Message text={messageData[0]}/>
-            <AlternativeMessage text={messageData[1]}/>
+            <hr/>
+            homeworks 1
+            {messageData.map(el => {
+                return (
+                    <div className='messageWrapper'>
+                        <hr/>
+                        <Message data={el}/>
+                    </div>
+                )
+            })}
+            <hr/>
+            <hr/>
         </div>
     )
 }
