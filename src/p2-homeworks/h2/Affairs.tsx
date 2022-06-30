@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {MouseEvent} from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairType, FilterType} from './HW2'
 
 type AffairsPropsType = { // need to fix any
-    data: any
-    setFilter: any
-    deleteAffairCallback: any
+    data: Array<AffairType>
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -17,20 +17,28 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => {} // need to fix
-    const setHigh = () => {}
-    const setMiddle = () => {}
-    const setLow = () => {}
+    const setAllHandler = (event: MouseEvent<HTMLButtonElement>) => {
+        props.setFilter('all')
+    } // need to fix
+    const setHighHandler = (event: MouseEvent<HTMLButtonElement>) => {
+        props.setFilter('high')
+    }
+    const setMiddleHandler = (event: MouseEvent<HTMLButtonElement>) => {
+        props.setFilter('middle')
+    }
+    const setLowHAndler = (event: MouseEvent<HTMLButtonElement>) => {
+        props.setFilter('low')
+    }
 
     return (
         <div>
 
             {mappedAffairs}
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <button onClick={setAllHandler}>All</button>
+            <button onClick={setHighHandler}>High</button>
+            <button onClick={setMiddleHandler}>Middle</button>
+            <button onClick={setLowHAndler}>Low</button>
         </div>
     )
 }

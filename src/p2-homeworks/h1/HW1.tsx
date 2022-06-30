@@ -49,8 +49,6 @@ function HW1() {
                     </div>
                 )
             })}
-            <hr/>
-            <hr/>
         </div>
     )
 }
