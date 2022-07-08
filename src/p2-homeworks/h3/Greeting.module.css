@@ -2,6 +2,27 @@
 
 }
 
-.error {
+.errorBorder {
     border: 1px solid red;
+}
+
+.errorText {
+    min-height: 20px;
+    color: red;
+}
+
+.button {
+    margin-left: 5px;
+}
+
+.counter {
+
+}
+
+.counter {
+    display: inline-block;
+    border: black solid 1px;
+    border-radius: 10%;
+    padding: 0 2px;
+    margin-left: 5px;
 }

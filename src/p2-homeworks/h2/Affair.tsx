@@ -1,6 +1,7 @@
 import React, {MouseEvent} from 'react'
 import {AffairType} from "./HW2";
 import {Button} from "./Button";
+import s from './Affair.module.css'
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -15,8 +16,10 @@ function Affair(props: AffairPropsType) {
 
     return (
         <div>
-            <span>{props.affair.name}</span>
-            <Button callBackButton={deleteCallback} title={'X'}/>
+            <tr>
+                <th className={s.th}>{props.affair.name}</th>
+                <td><Button callBackButton={deleteCallback} title={'X'}/></td>
+            </tr>
         </div>
     )
 }
