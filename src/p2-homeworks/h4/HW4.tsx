@@ -5,74 +5,64 @@ import SuperButton from './common/c2-SuperButton/SuperButton'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
-    const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
+    const [text, setText] = useState<string>('');
+    let [error, setError] = useState<string>('');
 
-    const showAlert = () => {
-        if (error) {
-            alert('введите текст...')
+    const writeText = (newText: string) => {
+        setText(newText);
+        setError('');
+    };
+    const action = () => {
+        if (text.trim()) {
+            alert(text);
+            setText('');
         } else {
-            alert(text) // если нет ошибки показать текст
+            setError('No text!');
         }
-    }
+    };
 
-    const [checked, setChecked] = useState<boolean>(false)
-    const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
+    const [checked, setChecked] = useState<boolean>(true);
 
     return (
-        <div>
+        <div className={s.homeworks4Wrapper}>
+            <hr/>
             <hr/>
             homeworks 4
-
-            <div className={s.column}>
+            <hr/>
+            <div className={s.insideWrapper}>
                 <SuperInputText
+                    className={s.stylePlus}
+                    placeholder={'write text and press Enter...'}
                     value={text}
-                    onChangeText={setText}
-                    onEnter={showAlert}
+                    onChangeText={writeText}
+                    onEnter={action}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    spanClassName={s.spanError}
                 />
 
-                <SuperInputText
-                    className={s.blue} // проверьте, рабоет ли смешивание классов
-                />
-
-                {/*----------------------------------------------------*/}
-
-                <SuperButton>
-                    default
+                <SuperButton
+                    red={true}
+                    onClick={action}
+                >
+                    Enter
                 </SuperButton>
 
                 <SuperButton
-                    red // пропсу с булевым значением не обязательно указывать true
-                    onClick={showAlert}
+                    disabled={true}
+                    onClick={action}
                 >
-                    delete {/*// название кнопки попадёт в children*/}
+                    Disabled
                 </SuperButton>
-
-                <SuperButton disabled>
-                    disabled
-                </SuperButton>
-
-                {/*----------------------------------------------------*/}
 
                 <SuperCheckbox
                     checked={checked}
                     onChangeChecked={setChecked}
+                    spanClassName={s.checkBoxSpan}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    some text
                 </SuperCheckbox>
 
-                {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperInputText/>*/}
-            {/*<AlternativeSuperButton/>*/}
-            {/*<AlternativeSuperCheckbox/>*/}
-            <hr/>
         </div>
     )
 }

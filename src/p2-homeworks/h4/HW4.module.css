@@ -1,13 +1,24 @@
-.blue {
-    border-bottom: 5px solid blue;
+.homeworks4Wrapper {
+    background-color: #b2b3fa;
 }
 
-.column {
+.insideWrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.testSpanError {
-    color: blue;
+.stylePlus {
+    display: inline-block;
+    border: 2px solid orangered;
+}
+
+.spanError {
+    font-style: italic;
+}
+
+.checkBoxSpan {
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-left: 5px;
 }
