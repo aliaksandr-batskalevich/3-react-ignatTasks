@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aliaksandr-batskalevich.github.io/3_react_ignatTasks/static/css/main.e974cdf2.css",
+    "main.js": "/aliaksandr-batskalevich.github.io/3_react_ignatTasks/static/js/main.0eba8d15.js",
+    "index.html": "/aliaksandr-batskalevich.github.io/3_react_ignatTasks/index.html",
+    "main.e974cdf2.css.map": "/aliaksandr-batskalevich.github.io/3_react_ignatTasks/static/css/main.e974cdf2.css.map",
+    "main.0eba8d15.js.map": "/aliaksandr-batskalevich.github.io/3_react_ignatTasks/static/js/main.0eba8d15.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e974cdf2.css",
+    "static/js/main.0eba8d15.js"
+  ]
+}
