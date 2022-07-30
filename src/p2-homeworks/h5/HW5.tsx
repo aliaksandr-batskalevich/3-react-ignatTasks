@@ -9,7 +9,7 @@ function HW5() {
         <div className={s.applicationWrapper}>
             <HashRouter>
                 <Header/>
-                <RoutesForProject/>
+                {/*<RoutesForProject/>*/}
             </HashRouter>
         </div>
     )
