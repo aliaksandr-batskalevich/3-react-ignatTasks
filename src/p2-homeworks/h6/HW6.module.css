@@ -1,0 +1,29 @@
+.HW6Wrapper {
+    text-align: center;
+}
+
+.alignWrapper {
+    display: inline-block;
+}
+
+.superEditableSpanWrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 200px;
+    height: 100px;
+
+    border: gold solid 2px;
+    border-radius: 5px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    min-width: 48%;
+}

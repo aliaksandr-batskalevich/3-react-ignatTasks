@@ -11,3 +11,10 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h2 {
+    padding: 10px;
+    color: orange;
+    letter-spacing: 0.1em;
+    text-align: center;
+}

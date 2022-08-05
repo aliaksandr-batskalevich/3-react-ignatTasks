@@ -1,0 +1,23 @@
+
+.spanWrapper {
+    padding: 3px;
+    border: white solid 1px;
+    text-align: left;
+}
+
+.span {
+    color: gold;
+    cursor: context-menu;
+}
+
+.span::before {
+    content: "✎";
+    display: inline-block;
+    color: orange;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
