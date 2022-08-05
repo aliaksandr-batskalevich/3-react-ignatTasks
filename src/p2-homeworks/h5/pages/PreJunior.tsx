@@ -9,10 +9,24 @@ function PreJunior() {
     return (
         <div>
             <HW1/>
+            <hr/>
+            <hr/>
+
             <HW2/>
+            <hr/>
+            <hr/>
+
             <HW3/>
+            <hr/>
+            <hr/>
+
             <HW4/>
+            <hr/>
+            <hr/>
+
             <HW6/>
+            <hr/>
+            <hr/>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Message} from "./Message";
-import './Hw1.css'
+import s from './Hw1.module.css'
 
 export type MessageData = {
     id: string
@@ -36,19 +36,24 @@ const messageData: MessageDataArr = [
 ]
 
 function HW1() {
+
+    let messages = messageData.map(el => <div className={s.messageWrapper}><Message data={el}/></div>)
+
+
     return (
-        <div className='hw1Wrapper'>
-            <hr/>
-            <hr/>
-            homeworks 1
-            {messageData.map(el => {
-                return (
-                    <div className='messageWrapper'>
-                        <hr/>
-                        <Message data={el}/>
+        <div className={s.hw1Wrapper}>
+            <h2>Dialogues</h2>
+            <div className={s.phoneOutWrapper}>
+                <div className={s.speaker}/>
+                <div className={s.displayWrapper}>
+                    {messages}
+                    <div className={s.textareaWrapper}>
+                        <textarea className={s.textarea}/>
+                        <button className={s.buttonSend}>SEND</button>
                     </div>
-                )
-            })}
+                </div>
+                <div className={s.button}/>
+            </div>
         </div>
     )
 }

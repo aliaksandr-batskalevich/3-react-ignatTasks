@@ -1,4 +1,5 @@
 .messageWrapper {
+    text-align: left;
     display: flex;
     align-items: flex-end;
 }
