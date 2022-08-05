@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/3-react-ignatTasks/static/css/main.e974cdf2.css",
-    "main.js": "/3-react-ignatTasks/static/js/main.0eba8d15.js",
+    "main.css": "/3-react-ignatTasks/static/css/main.78e9e54c.css",
+    "main.js": "/3-react-ignatTasks/static/js/main.d0e96c41.js",
     "index.html": "/3-react-ignatTasks/index.html",
-    "main.e974cdf2.css.map": "/3-react-ignatTasks/static/css/main.e974cdf2.css.map",
-    "main.0eba8d15.js.map": "/3-react-ignatTasks/static/js/main.0eba8d15.js.map"
+    "main.78e9e54c.css.map": "/3-react-ignatTasks/static/css/main.78e9e54c.css.map",
+    "main.d0e96c41.js.map": "/3-react-ignatTasks/static/js/main.d0e96c41.js.map"
   },
   "entrypoints": [
-    "static/css/main.e974cdf2.css",
-    "static/js/main.0eba8d15.js"
+    "static/css/main.78e9e54c.css",
+    "static/js/main.d0e96c41.js"
   ]
 }
