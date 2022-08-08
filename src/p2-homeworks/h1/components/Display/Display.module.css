@@ -1,0 +1,20 @@
+.displayWrapper {
+    margin: 0 20px;
+    padding: 5px;
+    height: 400px;
+    width: 270px;
+    border: white solid 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #d8e7c5;
+    overflow: hidden;
+}
+
+.messageWrapper {
+    margin-bottom: 10px;
+}
+
+.displayBlocked {
+    background-color: #2c2b2b;
+}

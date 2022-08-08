@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Message.module.css'
-import {MessageData} from "./HW1";
+import {MessageData} from "../../../HW1";
 
 type MessagePropsType = {
     data: MessageData

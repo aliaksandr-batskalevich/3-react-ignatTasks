@@ -1,0 +1,27 @@
+.textareaWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.textAreaWrapper {
+    display: inline-block;
+
+}
+
+.textarea {
+    padding: 2px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 205px;
+    height: 36px;
+    resize: none;
+}
+
+.textareaError {
+    border: red solid 2px;
+}
+
+.buttonSend {
+    margin-left: 5px;
+}

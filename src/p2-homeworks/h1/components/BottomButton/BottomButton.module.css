@@ -1,0 +1,8 @@
+.buttonWrapper {
+    margin: 5px 0;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: white solid 2px;
+}
