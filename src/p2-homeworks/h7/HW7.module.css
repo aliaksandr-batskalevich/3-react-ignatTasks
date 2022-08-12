@@ -1,0 +1,28 @@
+.mainWrapper {
+    padding-bottom: 10px;
+    border: gold solid 2px;
+    width: 300px;
+}
+
+.text {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+.inputsWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.superSelectWrapper {
+
+}
+
+.superRadioWrapper {
+    display: flex;
+    flex-direction: column;
+}

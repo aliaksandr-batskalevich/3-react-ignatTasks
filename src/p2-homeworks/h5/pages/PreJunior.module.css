@@ -1,0 +1,9 @@
+.preJuniorWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preJuniorWrapper > div {
+    margin-top: 20px;
+}
