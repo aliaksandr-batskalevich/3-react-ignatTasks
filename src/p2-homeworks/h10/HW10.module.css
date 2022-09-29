@@ -1,0 +1,17 @@
+.mainWrapper {
+    padding: 10px;
+    border: orange solid 1px;
+}
+
+.loadingWrapper {
+    text-align: center;
+    min-height: 30px;
+}
+
+.superButton {
+    padding: 3px;
+    min-width: 100px;
+
+    font-size: 14px;
+    font-weight: bold;
+}

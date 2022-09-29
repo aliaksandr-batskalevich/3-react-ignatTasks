@@ -1,36 +1,44 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import s from './HW10.module.css'
+import {Preloader} from "./components/Preloader/Preloader";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "./bll/store";
+import {loadingAC, LoadingStateType} from "./bll/loadingReducer";
 
 function HW10() {
-    // useSelector, useDispatch
-    const loading = false
+    let state = useSelector<AppStoreType, LoadingStateType>(state => state.loading);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        state.isLoading && setTimeout(() => {
+            dispatch(loadingAC(false));
+        }, 5000)
+    }, [state])
 
     const setLoading = () => {
-        // dispatch
-        // setTimeout
-        console.log('loading...')
+        dispatch(loadingAC(true));
     };
 
     return (
-        <div>
-            <hr/>
-            homeworks 10
-
-            {/*should work (должно работать)*/}
-            {loading
-                ? (
-                    <div>крутилка...</div>
-                ) : (
-                    <div>
-                        <SuperButton onClick={setLoading}>set loading...</SuperButton>
-                    </div>
-                )
-            }
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<Alternative/>*/}
-            <hr/>
+        <div className={s.mainWrapper}>
+            <h2>Fake loading</h2>
+            <div className={s.loadingWrapper}>
+                {state.isLoading
+                    ? (
+                        <Preloader/>
+                    ) : (
+                        <div>
+                            <SuperButton
+                                className={s.superButton}
+                                onClick={setLoading}
+                            >
+                                set loading...
+                            </SuperButton>
+                        </div>
+                    )
+                }
+            </div>
         </div>
     )
 }
