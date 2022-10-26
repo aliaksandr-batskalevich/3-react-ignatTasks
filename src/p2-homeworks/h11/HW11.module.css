@@ -1,0 +1,22 @@
+.mainWrapper {
+    padding: 10px;
+    border: orange solid 1px;
+}
+
+.range1Wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.range2Wrapper {
+    display: flex;
+}
+
+.valueVisualisation {
+    min-width: 40px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}

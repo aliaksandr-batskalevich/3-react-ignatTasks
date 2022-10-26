@@ -1,37 +1,37 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import s from './HW11.module.css'
 
 function HW11() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    const [value1, setValue1] = useState<number>(0);
+    const [value2, setValue2] = useState<number>(100);
+
+    const onChangeRange1Handler = (value: number) => {
+        setValue1(value);
+    };
+    const onChangeRange2Handler = (value: [number, number]) => {
+        setValue1(value[0]);
+        setValue2(value[1]);
+    };
 
     return (
-        <div>
-            <hr/>
-            homeworks 11
-
-            {/*should work (должно работать)*/}
-            <div>
-                <span>{value1}</span>
+        <div className={s.mainWrapper}>
+            <h2>Set range and go...</h2>
+            <div className={s.range1Wrapper}>
+                <div className={s.valueVisualisation}>{value1}</div>
                 <SuperRange
-                    // сделать так чтоб value1 изменялось
+                    onChangeRange={onChangeRange1Handler}
+                    value={value1}
                 />
             </div>
 
-            <div>
-                <span>{value1}</span>
+            <div className={s.range2Wrapper}>
                 <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
+                    onChangeRange={onChangeRange2Handler}
+                    value={[value1, value2]}
                 />
-                <span>{value2}</span>
             </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperRange/>*/}
-            {/*<AlternativeSuperDoubleRange/>*/}
-            <hr/>
         </div>
     )
 }
