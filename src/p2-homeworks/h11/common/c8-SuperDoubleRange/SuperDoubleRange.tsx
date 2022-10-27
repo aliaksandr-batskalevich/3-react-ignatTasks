@@ -23,7 +23,8 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({onChangeRange, v
     };
 
     const minValueInc = () => {
-        onChangeRange([value[0] + 1, value[1]]);
+        value[0] + 1 <= value[1]
+        && onChangeRange([value[0] + 1, value[1]]);
     };
     const minValueDec = () => {
         onChangeRange([value[0] - 1, value[1]]);
@@ -32,7 +33,8 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({onChangeRange, v
         onChangeRange([value[0], value[1] + 1]);
     };
     const maxValueDec = () => {
-        onChangeRange([value[0], value[1] - 1]);
+        value[1] - 1 >= value[0]
+        && onChangeRange([value[0], value[1] - 1]);
     };
 
     return (
