@@ -8,7 +8,9 @@ function HW11() {
     const [value2, setValue2] = useState<number>(100);
 
     const onChangeRange1Handler = (value: number) => {
-        setValue1(value);
+        if (value <= value2) {
+            setValue1(value);
+        }
     };
     const onChangeRange2Handler = (value: [number, number]) => {
         setValue1(value[0]);

@@ -1,0 +1,23 @@
+.valueVisionWrapper {
+    margin-bottom: 5px;
+
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    width: 15px;
+    height: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.value {
+    min-width: 22px;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+}

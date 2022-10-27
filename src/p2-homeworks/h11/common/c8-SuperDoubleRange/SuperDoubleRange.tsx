@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import s from './SuperDoubleRange.module.css'
+import {ValueVision} from "./ValueVision/ValueVision";
 
 type SuperDoubleRangePropsType = {
     onChangeRange: (value: [number, number]) => void
@@ -21,11 +22,24 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({onChangeRange, v
         setMaxValue(+event[1]);
     };
 
+    const minValueInc = () => {
+        onChangeRange([value[0] + 1, value[1]]);
+    };
+    const minValueDec = () => {
+        onChangeRange([value[0] - 1, value[1]]);
+    };
+    const maxValueInc = () => {
+        onChangeRange([value[0], value[1] + 1]);
+    };
+    const maxValueDec = () => {
+        onChangeRange([value[0], value[1] - 1]);
+    };
+
     return (
         <div className={s.superDoubleRangeWrapper}>
             <div className={s.valueWrapper}>
-                <div className={s.value}>{minValue}</div>
-                <div className={s.value}>{maxValue}</div>
+                <ValueVision value={minValue} inc={minValueInc} dec={minValueDec}/>
+                <ValueVision value={maxValue} inc={maxValueInc} dec={maxValueDec}/>
             </div>
             <Nouislider
                 range={{min: 0, max: 100}}
