@@ -10,7 +10,7 @@ import HW11 from "../../../h11/HW11";
 
 function Junior() {
     return (
-        <div className={s.preJuniorWrapper}>
+        <div className={s.juniorWrapper}>
             <HW7/>
             <HW8/>
             <HW9/>

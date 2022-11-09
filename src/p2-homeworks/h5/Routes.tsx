@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import PreJunior from "./pages/PreJunior/PreJunior";
 import Error404 from "./pages/Error404";
 import Junior from "./pages/Junior/Junior";
+import JuniorBetter from "./pages/Junior+/JuniorBetter";
 
 type titlePathType = {
     title: string
@@ -24,8 +25,9 @@ function RoutesForProject() {
     return (
         <div>
             <Routes>
-                <Route path={'/'} element={<PreJunior/>}/>
-                <Route path={'/junior'} element={<Junior/>}/>
+                <Route path={path.preJunior.path} element={<PreJunior/>}/>
+                <Route path={path.junior.path} element={<Junior/>}/>
+                <Route path={path.juniorPlus.path} element={<JuniorBetter/>}/>
                 <Route path={'/*'} element={<Error404/>}/>
             </Routes>
         </div>

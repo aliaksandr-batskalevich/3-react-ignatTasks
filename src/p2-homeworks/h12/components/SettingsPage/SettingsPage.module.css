@@ -1,0 +1,7 @@
+.settingsPageWrapper {
+
+}
+
+.settingsPageWrapper > label {
+    display: block;
+}
