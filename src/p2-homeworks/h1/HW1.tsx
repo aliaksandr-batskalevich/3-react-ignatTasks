@@ -13,7 +13,8 @@ export type MessageData = {
 }
 export type MessageDataArr = Array<MessageData>
 type textForMessageType = Array<string>
-export type modeType = 'messaging' | 'stop' | 'off'
+export type ModeType = 'on' | 'off'
+export type MessagingType = 'messaging' | 'stop'
 
 const startMessages: MessageDataArr = [
     {
@@ -39,14 +40,15 @@ const startMessages: MessageDataArr = [
     }
 ];
 
-const randomTextForMessages: textForMessageType = ['Hey!', 'Yo', 'I like it.', 'What are you doing now?']
+const randomTextForMessages: textForMessageType = ['Hey!', 'Yo', 'I like it.', 'What are you doing now?', 'Tell me about anything...', 'I am missing you:)', 'Ok)'];
 
 function HW1() {
 
     let [messages, setMessages] = useState<MessageDataArr>(startMessages);
-    let [mode, setMode] = useState<modeType>('messaging')
+    let [displayMode, setDisplayMode] = useState<ModeType>('on')
+    let [messagingMode, setMessagingMode] = useState<MessagingType>('messaging');
 
-    const getTimeNow = () => {
+    const getTimeNow = (): string => {
         let time = new Date().toLocaleTimeString().split(':');
         time.length = 2;
         return (
@@ -54,17 +56,23 @@ function HW1() {
         )
     };
 
-    console.log(getTimeNow());
-
-    const addRandomMessage = () => {
-        let newRandomMessage = {
+    const sendRandomMessage = (content?: string) => {
+        let newMessage = {
             id: v1(),
             avatar: 'https://cdn-icons-png.flaticon.com/512/126/126486.png',
             name: 'Marry',
-            message: randomTextForMessages[Math.trunc(Math.random() * randomTextForMessages.length)],
+            message: '',
             time: getTimeNow()
         };
-        setMessages([...messages, newRandomMessage]);
+
+        if (content === 'goodbye') {
+            newMessage.message = 'Ok, goodbye:)';
+        } else if (content === 'hi') {
+            newMessage.message = 'Hi!';
+        } else {
+            newMessage.message = randomTextForMessages[Math.trunc(Math.random() * randomTextForMessages.length)];
+        }
+        setMessages([...messages, newMessage]);
     };
     const sendMessage = (text: string) => {
         let newMessage = {
@@ -75,34 +83,39 @@ function HW1() {
             time: getTimeNow()
         };
         setMessages([...messages, newMessage]);
-        setMode('messaging');
     };
-
-    //  const stopRandomMessage = () => {               //notWork
-    //     setMode("stop");
-    //     let lastMessage = {
-    //         id: 'gs;',
-    //         avatar: 'https://cdn-icons-png.flaticon.com/512/126/126486.png',
-    //         name: 'Marry',
-    //         message: 'Ok, good bye!!!',
-    //         time: '22:06'
-    //     };
-    //     setMessages([...messages, lastMessage]);
-    // };
 
     const blockDisplay = () => {
-        setMode(mode !== 'off' ? 'off' : 'stop');
+        setDisplayMode(displayMode === 'on' ? 'off' : 'on');
     };
 
-    // if (mode === "messaging") {                  // notWork!!!
-    //     setTimeout(addRandomMessage, 5000);
-    // }
 
     useEffect(() => {
-        if (mode === 'messaging') {
-            setTimeout(addRandomMessage, 5000);
+        if (messagingMode === 'messaging') {
+            const intervalId = setInterval(sendRandomMessage, 10000);
+            return () => {
+                clearInterval(intervalId)
+            };
         }
-    }, [mode]);
+    }, [messagingMode, messages]);
+
+    useEffect(() => {
+        if (messages[messages.length - 1].name === 'Alex') {
+            let message = messages[messages.length - 1].message.toLowerCase().replace(' ', '');
+            if (message.split('goodbye').length > 1 && messagingMode === 'messaging') {
+                setMessagingMode("stop");
+                setTimeout(() => {
+                    sendRandomMessage('goodbye');
+                }, 2000)
+            }
+            if (message.split('hi').length > 1 && messagingMode === 'stop') {
+                setTimeout(() => {
+                    sendRandomMessage('hi');
+                    setMessagingMode("messaging");
+                }, 4000)
+            }
+        }
+    }, [messages])
 
     return (
         <div className={s.hw1Wrapper}>
@@ -110,7 +123,7 @@ function HW1() {
             <div className={s.phoneOutWrapper}>
                 <div className={s.speaker}/>
                 <Display
-                    mode={mode}
+                    mode={displayMode}
                     messages={messages}
                     sendMessageCallback={sendMessage}
                 />
