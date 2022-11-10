@@ -53,57 +53,63 @@ export const SettingsPage: React.FC<SettingsPagePropsType> = ({mode}) => {
     return (
         <div className={s.settingsPageWrapper}>
             <h3>SettingsPage</h3>
-            <div>
-                <label>
-                    Set color of background:
-                    <input
-                        type="color"
-                        value={backgroundColorState}
-                        onChange={backgroundColorHandler}/>
-                </label>
+            <div className={s.settingsForPage}>
+                <h5>Style for all page</h5>
+                <div>
+                    <label>
+                        Set color of background:
+                        <input
+                            type="color"
+                            value={backgroundColorState}
+                            onChange={backgroundColorHandler}/>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Set color of text:
+                        <input
+                            type="color"
+                            value={textColorState}
+                            onChange={textColorHandler}/>
+                    </label>
+                </div>
             </div>
-            <div>
-                <label>
-                    Set color of text:
-                    <input
-                        type="color"
-                        value={textColorState}
-                        onChange={textColorHandler}/>
-                </label>
-            </div>
-            <div>
-                <label>
-                    Set size of font:
-                    <input
-                        type="number"
-                        value={fontSizeState}
-                        onChange={fontSizeHandler}/>
-                    px
-                </label>
-            </div>
-            <div>
-                <label>
-                    Set weight of font:
-                    <select
-                        defaultValue={fontWeightState}
-                        onChange={fontWeightHandler}>
-                        <option
-                            value="lighter"
-                            selected={fontWeightState === 'lighter'}
-                        >lighter
-                        </option>
-                        <option
-                            value="normal"
-                            selected={fontWeightState === 'normal'}
-                        >normal
-                        </option>
-                        <option
-                            value="bold"
-                            selected={fontWeightState === 'bold'}
-                        >bold
-                        </option>
-                    </select>
-                </label>
+            <div className={s.settingsForText}>
+                <h5>Style for text of your post</h5>
+                <div>
+                    <label>
+                        Set size of font:
+                        <input
+                            type="number"
+                            value={fontSizeState}
+                            onChange={fontSizeHandler}/>
+                        px
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Set weight of font:
+                        <select
+                            defaultValue={fontWeightState}
+                            onChange={fontWeightHandler}>
+                            <option
+                                value="lighter"
+                                selected={fontWeightState === 'lighter'}
+                            >lighter
+                            </option>
+                            <option
+                                value="normal"
+                                selected={fontWeightState === 'normal'}
+                            >normal
+                            </option>
+                            <option
+                                value="bold"
+                                selected={fontWeightState === 'bold'}
+                            >bold
+                            </option>
+                        </select>
+                    </label>
+                </div>
             </div>
             <div className={s.buttonWrapper}>
                 <button onClick={setModeHandler}>Cancel</button>
