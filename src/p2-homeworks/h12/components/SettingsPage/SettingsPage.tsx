@@ -34,8 +34,16 @@ export const SettingsPage: React.FC<SettingsPagePropsType> = ({mode}) => {
         setChangedSettings(true);
     };
     const fontSizeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        if (+event.currentTarget.value >= 0 && +event.currentTarget.value <= 20) {
-            setFontSizeState(event.currentTarget.value);
+        let value = event.currentTarget.value;
+
+        if (+value >= 0 && +value <= 20) {
+            if (value.length > 1) {
+                let valueArr = value.split('');
+                if (valueArr[0] === '0') {
+                    value = valueArr.slice(1).join('');
+                }
+            }
+            setFontSizeState(value);
             setChangedSettings(true);
         }
 
@@ -113,7 +121,7 @@ export const SettingsPage: React.FC<SettingsPagePropsType> = ({mode}) => {
             </div>
             <div className={s.buttonWrapper}>
                 <button onClick={setModeHandler}>Cancel</button>
-                <button disabled={!(fontSizeState !== '0' && changedSettings)} onClick={setSettingsHandler}>Apply
+                <button disabled={!(fontSizeState !== '' && fontSizeState !== '0' && changedSettings)} onClick={setSettingsHandler}>Apply
                 </button>
             </div>
 
