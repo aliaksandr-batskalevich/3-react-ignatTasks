@@ -2,6 +2,26 @@
 
 }
 
-.settingsPageWrapper > label {
-    display: block;
+.settingsPageWrapper h3 {
+    text-align: center;
+}
+
+.settingsPageWrapper input, .settingsPageWrapper select {
+    margin-left: 5px;
+    width: 65px;
+    height: 18px;
+}
+
+.buttonWrapper {
+    text-align: center;
+}
+
+.buttonWrapper button {
+    margin-top: 5px;
+    width: 50px;
+    height: 20px;
+}
+
+.buttonWrapper button:first-child {
+    margin-right: 5px;
 }

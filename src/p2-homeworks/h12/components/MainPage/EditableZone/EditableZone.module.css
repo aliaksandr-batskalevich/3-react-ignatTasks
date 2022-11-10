@@ -1,0 +1,21 @@
+.editableZoneWrapper {
+
+}
+
+.mainArea {
+    padding: 3px;
+}
+
+.text {
+    font-style: italic;
+}
+
+.date {
+    text-align: right;
+    font-weight: bold;
+    opacity: 50%;
+}
+
+.textArea {
+    width: 100%;
+}

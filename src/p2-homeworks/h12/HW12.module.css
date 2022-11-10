@@ -1,27 +1,13 @@
 .HW12Wrapper {
+    padding: 5px;
+}
+
+.HW12WrapperWhite {
     background-color: white;
+    color: black;
 }
 
-.dark {
-    background: dimgrey;
-}
-
-.dark-text {
-    color: aliceblue;
-}
-
-.red {
-    background: lightcoral;
-}
-
-.red-text {
-    color: aqua;
-}
-
-.some {
-    background: lightgreen;
-}
-
-.some-text {
-    color: darkslateblue;
+.HW12WrapperDark {
+    background-color: #121233;
+    color: white;
 }

@@ -1,3 +1,11 @@
 .mainPageWrapper {
 
 }
+
+.mainPageWrapper h3 {
+    text-align: center;
+}
+
+.title {
+    margin: 15px 0 3px;
+}

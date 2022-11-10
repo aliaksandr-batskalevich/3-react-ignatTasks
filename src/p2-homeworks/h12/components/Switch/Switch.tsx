@@ -1,16 +1,16 @@
 import React, {ChangeEvent, FC} from 'react';
 import s from './Switch.module.css';
-import {changeTheme, CustomThemeType, ModeType, setMode, ThemesType} from "../../bll/themeReducer";
+import {changeTheme, ModeType, setMode, ThemesType} from "../../bll/themeReducer";
 import {useDispatch} from "react-redux";
 
 
 type SwitchPropsType = {
     mode: ModeType
     currentTheme: ThemesType
-    customTheme: CustomThemeType
+    customThemeIsFilled: boolean
 }
 
-export const Switch: FC<SwitchPropsType> = ({currentTheme, mode, customTheme}) => {
+export const Switch: FC<SwitchPropsType> = ({currentTheme, mode, customThemeIsFilled}) => {
 
     const dispatch = useDispatch();
 
@@ -25,11 +25,47 @@ export const Switch: FC<SwitchPropsType> = ({currentTheme, mode, customTheme}) =
 
     return (
         <div className={s.switchWrapper}>
-            <span>SET STYLE OF PAGE</span>
-            <label><input type="radio" name={'style'} value={'white'} checked={currentTheme === "white"} onChange={changeThemeHandler}/>white</label>
-            <label><input type="radio" name={'style'} value={'dark'} checked={currentTheme === "dark"} onChange={changeThemeHandler}/>dark</label>
-            <label><input type="radio" name={'style'} value={'custom'} checked={currentTheme === "custom"} onChange={changeThemeHandler} disabled={!customTheme.isFilled}/>custom</label>
-            <button onClick={setCustomSettingsHandler}>set custom settings</button>
+            <h3>SET STYLE OF PAGE</h3>
+            <div className={s.optionsWrapper}>
+                <div className={s.labelWrapper}>
+                    <label>
+                        <input
+                            type="radio"
+                            name={'style'}
+                            value={'white'}
+                            checked={currentTheme === "white"}
+                            onChange={changeThemeHandler}/>
+                        <br/>white
+                    </label>
+                </div>
+                <div className={s.labelWrapper}>
+                    <label>
+                        <input
+                            type="radio"
+                            name={'style'}
+                            value={'dark'}
+                            checked={currentTheme === "dark"}
+                            onChange={changeThemeHandler}/>
+                        <br/>dark
+                    </label>
+                </div>
+                <div className={`${s.labelWrapper} ${s.labelWrapperCustom}`}>
+                    <label>
+                        <input
+                            type="radio"
+                            name={'style'}
+                            value={'custom'}
+                            checked={currentTheme === "custom"}
+                            onChange={changeThemeHandler}
+                            disabled={!customThemeIsFilled}/>
+                        <br/>custom
+                    </label>
+                    <button onClick={setCustomSettingsHandler}>define</button>
+                </div>
+
+            </div>
+
+
         </div>
     );
 };

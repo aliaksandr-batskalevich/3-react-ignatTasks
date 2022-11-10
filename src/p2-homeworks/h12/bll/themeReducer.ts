@@ -9,7 +9,7 @@ export type ContentType = {
 export type FontWeightType = 'lighter' | 'normal' | 'bold';
 export type CustomThemeSettingsType = {
     backgroundColor: string
-    textColor: string
+    color: string
     fontSize: string
     fontWeight: FontWeightType
 };
@@ -18,11 +18,18 @@ export type CustomThemeType = {
     settings: CustomThemeSettingsType
 };
 
-type ActionsType = ReturnType<typeof changeTheme> | ReturnType<typeof setMode> | ReturnType<typeof setSettings>;
+type ActionsType = ReturnType<typeof changeTheme> | ReturnType<typeof setMode> | ReturnType<typeof setSettings> | ReturnType<typeof changeText>;
 
 const CHANGE_THEME = 'CHANGE_THEME';
 const SET_MODE = 'SET_MODE';
 const SET_SETTINGS = 'SET_SETTINGS';
+const CHANGE_TEXT = 'CHANGE_TEXT';
+
+const getDate = (): string => {
+    let time = new Date().toLocaleTimeString().split(':', 2).join(':');
+    let date = new Date().toLocaleDateString();
+    return `${date} ${time}`;
+};
 
 const initState = {
     mode: 'mainPage' as ModeType,
@@ -31,16 +38,16 @@ const initState = {
         isFilled: false,
         settings: {
             backgroundColor: '#bd45e8',
-            textColor: '#2fdf0c',
+            color: '#2fdf0c',
             fontSize: '0',
             fontWeight: 'normal',
         }
     } as CustomThemeType,
 
     content: {
-        title: 'Test theme in APP with redux :)',
-        text: 'Some text. You can change the text by double click!',
-        date: 'Date when you testing...'
+        title: 'Leave your post below :)',
+        text: 'Nice day today))))',
+        date: getDate(),
     } as ContentType
 };
 
@@ -53,6 +60,8 @@ export const themeReducer = (state = initState, action: ActionsType): PageStateT
             return {...state, ...action.payload};
         case "SET_SETTINGS":
             return {...state, customTheme: {isFilled: true, settings: {...action.payload}}};
+        case "CHANGE_TEXT":
+            return {...state, content: {...state.content, ...action.payload}};
         default: return state;
     }
 };
@@ -69,9 +78,16 @@ export const setMode = (mode: ModeType) => {
         payload: {mode}
     } as const;
 };
-export const setSettings = (backgroundColor: string, textColor: string, fontSize: string, fontWeight: FontWeightType) => {
+export const setSettings = (backgroundColor: string, color: string, fontSize: string, fontWeight: FontWeightType) => {
     return {
         type: SET_SETTINGS,
-        payload: {backgroundColor, textColor, fontSize, fontWeight}
+        payload: {backgroundColor, color: color, fontSize, fontWeight}
+    } as const;
+};
+export const changeText = (text: string) => {
+    const date = getDate();
+    return {
+        type: CHANGE_TEXT,
+        payload: {text, date}
     } as const;
 };
