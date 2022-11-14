@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {useState} from 'react'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import s from './HW4.module.css'
 import SuperButton from './common/c2-SuperButton/SuperButton'
@@ -9,7 +9,7 @@ function HW4() {
     let [error, setError] = useState<string>('');
 
     const writeText = (newText: string) => {
-        setText(newText);
+        setText(newText.trim());
         setError('');
     };
     const action = () => {
@@ -25,10 +25,7 @@ function HW4() {
 
     return (
         <div className={s.homeworks4Wrapper}>
-            <hr/>
-            <hr/>
-            homeworks 4
-            <hr/>
+            <h2>Using Super Components<br/>(props inheritance)</h2>
             <div className={s.insideWrapper}>
                 <SuperInputText
                     className={s.stylePlus}
@@ -41,6 +38,7 @@ function HW4() {
                 />
 
                 <SuperButton
+                    className={s.enterButton}
                     red={true}
                     onClick={action}
                 >
@@ -48,19 +46,20 @@ function HW4() {
                 </SuperButton>
 
                 <SuperButton
-                    disabled={true}
+                    className={s.enterButton}
+                    disabled={text.trim().length === 0}
                     onClick={action}
                 >
-                    Disabled
+                    {text.trim().length === 0 ? 'Disabled' : 'Enter'}
                 </SuperButton>
 
-                <SuperCheckbox
-                    checked={checked}
-                    onChangeChecked={setChecked}
-                    spanClassName={s.checkBoxSpan}
-                >
-                    some text
-                </SuperCheckbox>
+                {/*<SuperCheckbox*/}
+                {/*    checked={checked}*/}
+                {/*    onChangeChecked={setChecked}*/}
+                {/*    spanClassName={s.checkBoxSpan}*/}
+                {/*>*/}
+                {/*    some text*/}
+                {/*</SuperCheckbox>*/}
 
             </div>
         </div>

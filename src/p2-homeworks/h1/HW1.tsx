@@ -92,7 +92,7 @@ function HW1() {
 
     useEffect(() => {
         if (messagingMode === 'messaging') {
-            const intervalId = setInterval(sendRandomMessage, 10000);
+            const intervalId = setInterval(sendRandomMessage, 7000);
             return () => {
                 clearInterval(intervalId)
             };
@@ -118,19 +118,24 @@ function HW1() {
     }, [messages])
 
     return (
-        <div className={s.hw1Wrapper}>
-            <h2>Dialogues</h2>
-            <div className={s.phoneOutWrapper}>
-                <div className={s.speaker}/>
-                <Display
-                    mode={displayMode}
-                    messages={messages}
-                    sendMessageCallback={sendMessage}
-                />
-                <BottomButton
-                    onClickCallback={blockDisplay}
-                />
+        <div className={s.mainWrapper}>
+            <div className={s.hw1Wrapper}>
+                <h2>Dialogues</h2>
+                <div className={s.phoneOutWrapper}>
+                    <div className={s.speaker}/>
+                    <Display
+                        mode={displayMode}
+                        messages={messages}
+                        sendMessageCallback={sendMessage}
+                    />
+                    <BottomButton
+                        onClickCallback={blockDisplay}
+                    />
+                </div>
             </div>
+            <p className={s.context}>Here you can test fake massager. Marry sends random messages, you can reply, but she won't care :P :)
+                <br/>She will spot spamming when you send phrase with word <span>GOODBYE (or Goodbye, or GoodBye ....)</span> and start again on your <span>"Hi"</span> message. You can also turn off the screen with the <span>Home
+                    button</span>. Good luck)</p>
         </div>
     )
 }

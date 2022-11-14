@@ -2,7 +2,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: black solid 1px;
+    border: red solid 1px;
     border-radius: 20%;
     text-align: center;
     margin-left: 5px;
@@ -10,7 +10,6 @@
 }
 
 .span {
-    font-size: 10px;
+    font-size: 20px;
     line-height: 20px;
-    vertical-align: center;
 }

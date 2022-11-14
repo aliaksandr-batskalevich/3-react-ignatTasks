@@ -17,7 +17,8 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
     {_id: 2, name: 'Anime', priority: 'low'},
     {_id: 3, name: 'Games', priority: 'low'},
     {_id: 4, name: 'Work', priority: 'high'},
-    {_id: 5, name: 'HTML & CSS', priority: 'middle'},
+    {_id: 5, name: 'HTML', priority: 'middle'},
+    {_id: 6, name: 'CSS', priority: 'middle'},
 ]
 
 // pure helper functions
@@ -45,12 +46,7 @@ function HW2() {
 
     return (
         <div className='HW2Wrapper'>
-            <hr/>
-            <hr/>
-            homeworks 2
-            <hr/>
-
-            {/*should work (должно работать)*/}
+            <h2>Sort and delete with local state</h2>
             <div className='AffairsWrapper'>
                 <Affairs
                 data={filteredAffairs}

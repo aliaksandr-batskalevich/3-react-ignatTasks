@@ -16,10 +16,10 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setError('');
     }
     const addUser = () => {
-        if (name.length !== 0) {
+        if (name.trim().length !== 0) {
             addUserCallback(name);
             setName('');
-            alert(`Hello ${name}!`);
+            alert(`Hello ${name.trim()}!`);
         } else {
             setError('Name must have a latter!')
         }

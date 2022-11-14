@@ -15,12 +15,11 @@ function Affair(props: AffairPropsType) {
     }// need to fix
 
     return (
-        <div>
-            <tr>
+            <tr className={s.affairRow}>
                 <th className={s.th}>{props.affair.name}</th>
+                <td>{props.affair.priority}</td>
                 <td><Button callBackButton={deleteCallback} title={'X'}/></td>
             </tr>
-        </div>
     )
 }
 

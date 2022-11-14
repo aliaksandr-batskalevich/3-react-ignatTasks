@@ -20,3 +20,13 @@
     border-radius: 2px;
 }
 
+.context {
+    padding: 10px;
+    color: gold;
+    font-size: 18px;
+}
+.context span {
+    font-weight: bold;
+    color: orangered;
+}
+

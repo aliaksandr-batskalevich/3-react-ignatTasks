@@ -1,20 +1,27 @@
 .homeworks4Wrapper {
-    background-color: #b2b3fa;
 }
 
 .insideWrapper {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .stylePlus {
-    display: inline-block;
-    border: 2px solid orangered;
 }
 
 .spanError {
     font-style: italic;
+}
+
+.enterButton {
+    display: inline-block;
+    min-width: 60px;
+}
+
+.enterButton:not(:last-child) {
+    margin-bottom: 3px;
 }
 
 .checkBoxSpan {

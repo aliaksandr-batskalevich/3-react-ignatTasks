@@ -1,6 +1,7 @@
 import React, {MouseEvent} from 'react'
 import Affair from './Affair'
-import {AffairType, FilterType} from './HW2'
+import {AffairType, FilterType} from './HW2';
+import s from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
     data: Array<AffairType>
@@ -31,14 +32,23 @@ function Affairs(props: AffairsPropsType) {
     }
 
     return (
-        <div>
+        <div className={s.affairsWrapper}>
+            <table className={s.table}>
+                <tr className={s.tableRowHead}>
+                    <th>Tasks</th>
+                    <th>Priority</th>
+                    <th>Del</th>
+                </tr>
+                {mappedAffairs}
+            </table>
 
-            {mappedAffairs}
 
-            <button onClick={setAllHandler}>All</button>
-            <button onClick={setHighHandler}>High</button>
-            <button onClick={setMiddleHandler}>Middle</button>
-            <button onClick={setLowHAndler}>Low</button>
+            <div className={s.buttonsWrapper}>
+                <button onClick={setAllHandler}>All</button>
+                <button onClick={setHighHandler}>High</button>
+                <button onClick={setMiddleHandler}>Middle</button>
+                <button onClick={setLowHAndler}>Low</button>
+            </div>
         </div>
     )
 }

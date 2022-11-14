@@ -7,4 +7,5 @@
 .applicationWrapper {
     background-image: url("https://avatanplus.com/files/resources/original/574333a06b1f6154de81aab7.jpg");
     background-size: cover;
+    min-height: 100vh;
 }

@@ -37,7 +37,7 @@ const initState = {
     customTheme: {
         isFilled: false,
         settings: {
-            backgroundColor: '#bd45e8',
+            backgroundColor: '#000000',
             color: '#2fdf0c',
             fontSize: '0',
             fontWeight: 'normal',

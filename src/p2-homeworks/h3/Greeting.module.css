@@ -1,5 +1,6 @@
-.someClass {
-
+.formWrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .errorBorder {
@@ -7,6 +8,7 @@
 }
 
 .errorText {
+    text-align: center;
     min-height: 20px;
     color: red;
 }
@@ -16,13 +18,10 @@
 }
 
 .counter {
-
-}
-
-.counter {
     display: inline-block;
-    border: black solid 1px;
+    border: white solid 1px;
     border-radius: 10%;
     padding: 0 2px;
     margin-left: 5px;
+    color: gold;
 }

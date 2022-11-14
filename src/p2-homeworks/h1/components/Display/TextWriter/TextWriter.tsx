@@ -28,6 +28,9 @@ export const TextWriter: React.FC<TextWriterPropsType> = ({sendMessageCallback})
         sendMessage();
     };
     const onPressEnterTextAreaHandler = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
     };
 
     let textAreaStyle = error ? `${s.textarea} ${s.textareaError}` : s.textarea

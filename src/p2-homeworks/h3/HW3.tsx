@@ -13,15 +13,12 @@ function HW3() {
     const [users, setUsers] = useState<Array<UserType>>([])
 
     const addUserCallback = (name: string) => {
-        setUsers([{_id: v1(), name: name}, ...users]);
+        setUsers([{_id: v1(), name: name.trim()}, ...users]);
     }
 
     return (
         <div className={s.hw3Wrapper}>
-            <hr/>
-            <hr/>
-            homeworks 3
-            <hr/>
+            <h2>Enter text and call alert +counter</h2>
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
         </div>
     )
