@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Pagination.module.css'
-import SuperButton from "../../h4/common/c2-SuperButton/SuperButton";
-import {NavLink, useLocation, useNavigate, useParams} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 
 export const Pagination = () => {
     const {pathname} = useLocation();

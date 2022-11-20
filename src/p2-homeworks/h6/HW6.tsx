@@ -16,7 +16,6 @@ function HW6() {
 
     return (
         <div className={s.HW6Wrapper}>
-            <hr/>
             <h2>SuperEditableSpan (6)</h2>
             <div className={s.alignWrapper}>
                 <div className={s.superEditableSpanWrapper}>

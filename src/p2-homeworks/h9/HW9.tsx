@@ -1,6 +1,6 @@
 import React from 'react'
-import Clock from './Clock'
 import s from "../h8/HW8.module.css";
+import {Clock} from "./Clock/Clock";
 
 function HW9() {
     return (
