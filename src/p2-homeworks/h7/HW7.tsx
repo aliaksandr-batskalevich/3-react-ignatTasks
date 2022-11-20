@@ -14,7 +14,7 @@ function HW7() {
 
     return (
         <div className={s.mainWrapper}>
-            <h2>select VS radio</h2>
+            <h2>select VS radio (7)</h2>
             <p className={s.text}>I am going to...</p>
             <div className={s.inputsWrapper}>
                 <div className={s.superSelectWrapper}>

@@ -3,6 +3,7 @@ import Header from './Header'
 import RoutesForProject from './Routes'
 import {HashRouter} from "react-router-dom";
 import s from './HW5.module.css'
+import {Pagination} from "./Pagination/Pagination";
 
 function HW5() {
     return (
@@ -10,6 +11,7 @@ function HW5() {
             <HashRouter>
                 <Header/>
                 <RoutesForProject/>
+                <Pagination/>
             </HashRouter>
         </div>
     )

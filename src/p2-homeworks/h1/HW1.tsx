@@ -120,7 +120,7 @@ function HW1() {
     return (
         <div className={s.mainWrapper}>
             <div className={s.hw1Wrapper}>
-                <h2>Dialogues</h2>
+                <h2>Dialogues (1)</h2>
                 <div className={s.phoneOutWrapper}>
                     <div className={s.speaker}/>
                     <Display

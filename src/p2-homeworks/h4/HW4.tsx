@@ -25,7 +25,7 @@ function HW4() {
 
     return (
         <div className={s.homeworks4Wrapper}>
-            <h2>Using Super Components<br/>(props inheritance)</h2>
+            <h2>Using Super Components<br/>(props inheritance) (4)</h2>
             <div className={s.insideWrapper}>
                 <SuperInputText
                     className={s.stylePlus}

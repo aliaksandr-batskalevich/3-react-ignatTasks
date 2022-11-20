@@ -22,7 +22,7 @@ function HW10() {
 
     return (
         <div className={s.mainWrapper}>
-            <h2>Fake loading</h2>
+            <h2>Fake loading (10)</h2>
             <div className={s.loadingWrapper}>
                 {state.isLoading
                     ? (

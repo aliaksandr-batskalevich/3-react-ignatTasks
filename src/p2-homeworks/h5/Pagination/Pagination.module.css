@@ -1,0 +1,26 @@
+.paginationWrapper {
+    margin-top: 25px;
+    padding: 10px;
+
+    text-align: center;
+}
+
+.buttonWrapper a {
+    padding: 5px;
+    display: inline-block;
+    color: gold;
+    min-width: 175px;
+
+    border: gold solid 1px;
+    border-radius: 5px;
+}
+
+.buttonWrapper a:not(:last-child) {
+    margin-right: 10px;
+}
+
+.buttonWrapper a:hover {
+    background-color: gold;
+    color: blue;
+    font-weight: bold;
+}

@@ -35,7 +35,7 @@ function HW8() {
 
     return (
         <div className={s.mainWrapper}>
-            <h2>Sort with reducer</h2>
+            <h2>Sort with reducer (8)</h2>
             <table className={s.table}>
                 <tr>
                     <th className={s.td}>ID</th>

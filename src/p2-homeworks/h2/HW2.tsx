@@ -46,7 +46,7 @@ function HW2() {
 
     return (
         <div className='HW2Wrapper'>
-            <h2>Sort and delete with local state</h2>
+            <h2>Sort and delete with local state (2)</h2>
             <div className='AffairsWrapper'>
                 <Affairs
                 data={filteredAffairs}

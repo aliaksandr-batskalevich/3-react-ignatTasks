@@ -19,7 +19,7 @@ function HW11() {
 
     return (
         <div className={s.mainWrapper}>
-            <h2>Set range and go...</h2>
+            <h2>Set range and go... (11)</h2>
             <div className={s.range1Wrapper}>
                 <div className={s.valueVisualisation}>{value1}</div>
                 <SuperRange

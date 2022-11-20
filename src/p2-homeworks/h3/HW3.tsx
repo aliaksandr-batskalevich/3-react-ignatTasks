@@ -18,7 +18,7 @@ function HW3() {
 
     return (
         <div className={s.hw3Wrapper}>
-            <h2>Enter text and call alert +counter</h2>
+            <h2>Enter text and call alert +counter (3)</h2>
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
         </div>
     )
