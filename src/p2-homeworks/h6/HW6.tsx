@@ -16,7 +16,7 @@ function HW6() {
 
     return (
         <div className={s.HW6Wrapper}>
-            <h2>SuperEditableSpan (6)</h2>
+            <h2>SuperEditableSpan<br/>save to localStorage (6)</h2>
             <div className={s.alignWrapper}>
                 <div className={s.superEditableSpanWrapper}>
                     <div>
