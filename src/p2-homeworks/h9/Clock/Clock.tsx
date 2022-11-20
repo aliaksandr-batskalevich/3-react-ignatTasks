@@ -26,6 +26,7 @@ export const Clock = () => {
 
     useEffect(() => {
         startTiming();
+        return () => clearInterval(intervalId);
     }, []);
     useEffect(() => {
         if (seconds === 60) {
@@ -70,13 +71,16 @@ export const Clock = () => {
     return (
         <div className={s.mainWrapper}>
             <Switch clockStyle={clockStyle} setClockStyleCallback={setClockStyleCallback}/>
-            {clockStyle === 'digital'
+            <div className={s.clocksWrapper}>
+                { clockStyle === 'digital'
                 ? <DigitalClock hours={hours} minutes={minutes} seconds={seconds}/>
                 : <AnalogClock
                     seconds={seconds}
                     minutes={minutes}
                     hours={hours}
-                />}
+                />
+                }
+            </div>
             <div className={s.buttonWrapper}>
                 <button className={s.button} onClick={resetButtonHandler}>reset</button>
                 <button className={s.button} onClick={trueTimeButtonHandler}>true time</button>

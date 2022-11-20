@@ -7,6 +7,12 @@
     background-color: #010136;
 }
 
+.clocksWrapper {
+    min-height: 235px;
+    display: flex;
+    align-items: center;
+}
+
 .buttonWrapper {
     display: flex;
     justify-content: space-between;
