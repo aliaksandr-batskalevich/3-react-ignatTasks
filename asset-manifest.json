@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/3-react-ignatTasks/static/css/main.1756550a.css",
-    "main.js": "/3-react-ignatTasks/static/js/main.8377d934.js",
+    "main.css": "/3-react-ignatTasks/static/css/main.edaf5f9d.css",
+    "main.js": "/3-react-ignatTasks/static/js/main.1cb2dfe0.js",
     "static/media/giphy.gif": "/3-react-ignatTasks/static/media/giphy.86ce9fa243b127b191fc.gif",
+    "static/media/spinnerPreloader.gif": "/3-react-ignatTasks/static/media/spinnerPreloader.538a46681c0d1777619e.gif",
     "index.html": "/3-react-ignatTasks/index.html",
-    "main.1756550a.css.map": "/3-react-ignatTasks/static/css/main.1756550a.css.map",
-    "main.8377d934.js.map": "/3-react-ignatTasks/static/js/main.8377d934.js.map"
+    "main.edaf5f9d.css.map": "/3-react-ignatTasks/static/css/main.edaf5f9d.css.map",
+    "main.1cb2dfe0.js.map": "/3-react-ignatTasks/static/js/main.1cb2dfe0.js.map"
   },
   "entrypoints": [
-    "static/css/main.1756550a.css",
-    "static/js/main.8377d934.js"
+    "static/css/main.edaf5f9d.css",
+    "static/js/main.1cb2dfe0.js"
   ]
 }
