@@ -1,0 +1,28 @@
+.requestWrapper {
+    text-align: center;
+}
+
+.requestWrapper label {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.requestWrapper input {
+    cursor: pointer;
+}
+
+.buttonWrapper {
+    margin-top: 10px;
+}
+
+.buttonWrapper button {
+    width: 100px;
+    padding: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonWrapper button:hover {
+    text-decoration: underline;
+}

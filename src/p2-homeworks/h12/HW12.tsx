@@ -14,7 +14,7 @@ function HW12() {
     const styleForText = {fontSize: `${fontSize}px`, fontWeight: fontWeight}
 
     return (
-        <>
+        <div>
             <h2>Set style and write!</h2>
             <div
                 className={`${s.HW12Wrapper} ${currentTheme === "dark" ? s.HW12WrapperDark : currentTheme === "white" ? s.HW12WrapperWhite : ''}`}
@@ -23,7 +23,7 @@ function HW12() {
                     ? <MainPage styleForText={styleForText}/>
                     : <SettingsPage mode={mode}/>}
             </div>
-        </>
+        </div>
     );
 }
 

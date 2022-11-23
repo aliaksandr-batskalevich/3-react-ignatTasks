@@ -1,0 +1,8 @@
+.preloaderWrapper {
+    text-align: center;
+}
+
+.preloaderWrapper img {
+    display: inline-block;
+    width: 70px;
+}
