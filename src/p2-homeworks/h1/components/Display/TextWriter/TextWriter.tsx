@@ -28,7 +28,7 @@ export const TextWriter: React.FC<TextWriterPropsType> = ({sendMessageCallback})
         sendMessage();
     };
     const onPressEnterTextAreaHandler = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-        if (event.key === 'Enter') {
+        if (event.charCode === 13 && event.ctrlKey) {
             sendMessage();
         }
     };
